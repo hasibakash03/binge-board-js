@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Binge Board</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header with the two tabs -->
+  <header class="header">
+    <div class="logo">BINGE <span>BOARD</span></div>
+    <nav class="tabs">
+      <button class="tab active" id="tab-browse">Browse</button>
+      <button class="tab" id="tab-watchlist">My Watchlist <span class="badge" id="badge">0</span></button>
+    </nav>
+  </header>
+
+  <main class="page">
+    <!-- Search, genre filter, sort and Surprise me (hidden on the Watchlist tab) -->
+    <section class="controls" id="controls">
+      <form class="search-form" id="search-form">
+        <input type="search" id="search-input" placeholder="Search TV shows, e.g. Breaking Bad" aria-label="Search TV shows">
+        <button class="btn primary" type="submit">Search</button>
+      </form>
+      <div class="chips" id="chips"></div>
+      <div class="controls-row">
+        <div class="toggle-group" id="sorts"></div>
+        <button class="surprise" id="surprise">🎲 Surprise me</button>
+      </div>
+    </section>
+
+    <h2 class="page-title hidden" id="page-title"></h2>
+
+    <!-- The message box (loading / error / empty) and the card grid are filled by script.js -->
+    <div id="status"></div>
+    <section class="grid" id="grid"></section>
+  </main>
+
+  <footer class="footer">
+    <p>Data from the free TVMaze API (api.tvmaze.com). No account or key needed.</p>
+    <p>© 2026 Binge Board. Built by Hasib Akash for CSE-2340 (Software Development I), IIUC.</p>
+  </footer>
+
+  <!-- Details pop-up opened when a card is clicked -->
+  <dialog class="details" id="details"></dialog>
+
+  <script src="script.js"></script>
+</body>
+</html>
